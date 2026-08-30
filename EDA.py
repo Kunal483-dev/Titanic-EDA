@@ -89,3 +89,14 @@ sns.pairplot(
 )
 
 plt.show()
+
+df["FamilySize"] = df["SibSp"] + df["Parch"] + 1
+
+print(df.groupby("FamilySize")["Survived"].mean())
+
+plt.figure(figsize=(10, 5))
+sns.barplot(data=df, x="FamilySize", y="Survived", errorbar=None, palette="magma")
+plt.title("Survival Rate by Family Size")
+plt.xlabel("Family Size")
+plt.ylabel("Survival Rate")
+plt.show()
