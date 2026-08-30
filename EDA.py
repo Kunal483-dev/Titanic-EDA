@@ -39,3 +39,14 @@ df[numeric_features].hist(
 plt.suptitle("Distribution of Numeric Features", fontsize=16)
 plt.tight_layout()
 plt.show()
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+sns.boxplot(y=df["Age"], ax=axes[0], color="skyblue")
+axes[0].set_title("Boxplot of Age")
+
+sns.boxplot(y=df["Fare"], ax=axes[1], color="salmon")
+axes[1].set_title("Boxplot of Fare")
+
+plt.tight_layout()
+plt.show()
