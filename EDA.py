@@ -100,3 +100,15 @@ plt.title("Survival Rate by Family Size")
 plt.xlabel("Family Size")
 plt.ylabel("Survival Rate")
 plt.show()
+
+fig = px.scatter(
+    df,
+    x="Age",
+    y="Fare",
+    color="Survived",
+    symbol="Sex",
+    hover_data=["Name", "Pclass", "Embarked"],
+    title="Age vs Fare by Survival Status"
+)
+
+fig.show()
