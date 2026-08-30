@@ -80,3 +80,12 @@ plt.title("Average Survival Rate by Embarkation Port")
 plt.xlabel("Embarkation Port")
 plt.ylabel("Survival Rate")
 plt.show()
+
+sns.pairplot(
+    df[["Survived", "Pclass", "Age", "SibSp", "Parch", "Fare"]],
+    hue="Survived",
+    diag_kind="hist",
+    corner=True
+)
+
+plt.show()
