@@ -18,3 +18,12 @@ print("\nMissing values in each column:")
 print(df.isnull().sum())
 
 print("\nDuplicate rows:", df.duplicated().sum())
+
+print("\nNumerical feature summary:")
+print(df.describe())
+
+print("\nMedian values:")
+print(df[["Age", "Fare", "SibSp", "Parch"]].median())
+
+print("\nCategorical feature summary:")
+print(df[["Sex", "Embarked"]].describe())
