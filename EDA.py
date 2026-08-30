@@ -61,3 +61,14 @@ plt.legend(title="Survived", labels=["No", "Yes"])
 plt.show()
 
 print(df.groupby("Sex")["Survived"].mean())
+
+plt.figure(figsize=(7, 5))
+
+sns.countplot(data=df, x="Pclass", hue="Survived", palette="Set1")
+plt.title("Survival Count by Passenger Class")
+plt.xlabel("Passenger Class")
+plt.ylabel("Number of Passengers")
+plt.legend(title="Survived", labels=["No", "Yes"])
+plt.show()
+
+print(df.groupby("Pclass")["Survived"].mean())
