@@ -27,3 +27,15 @@ print(df[["Age", "Fare", "SibSp", "Parch"]].median())
 
 print("\nCategorical feature summary:")
 print(df[["Sex", "Embarked"]].describe())
+
+numeric_features = ["Age", "Fare", "SibSp", "Parch"]
+
+df[numeric_features].hist(
+    bins=20,
+    figsize=(12, 8),
+    edgecolor="black"
+)
+
+plt.suptitle("Distribution of Numeric Features", fontsize=16)
+plt.tight_layout()
+plt.show()
