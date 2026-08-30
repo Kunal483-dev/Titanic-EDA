@@ -50,3 +50,14 @@ axes[1].set_title("Boxplot of Fare")
 
 plt.tight_layout()
 plt.show()
+
+plt.figure(figsize=(7, 5))
+
+sns.countplot(data=df, x="Sex", hue="Survived", palette="Set2")
+plt.title("Survival Count by Gender")
+plt.xlabel("Gender")
+plt.ylabel("Number of Passengers")
+plt.legend(title="Survived", labels=["No", "Yes"])
+plt.show()
+
+print(df.groupby("Sex")["Survived"].mean())
