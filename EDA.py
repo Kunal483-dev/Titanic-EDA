@@ -72,3 +72,11 @@ plt.legend(title="Survived", labels=["No", "Yes"])
 plt.show()
 
 print(df.groupby("Pclass")["Survived"].mean())
+
+plt.figure(figsize=(7, 5))
+
+sns.barplot(data=df, x="Embarked", y="Survived", errorbar=None, palette="viridis")
+plt.title("Average Survival Rate by Embarkation Port")
+plt.xlabel("Embarkation Port")
+plt.ylabel("Survival Rate")
+plt.show()
